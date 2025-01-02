@@ -94,7 +94,7 @@ body {
     font-weight: bold;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-	white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
 
 .top-bar-button:hover {
@@ -103,7 +103,7 @@ body {
 
 /* Seção principal */
 .hero {
-    background: url('../img/matrix.jpg') no-repeat center center/cover;
+    background: url('https://github.com/tuco-gui/LP---CLIENTE-BILINKI/raw/main/img/matrix.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -167,7 +167,7 @@ body {
     width: 80%;
     max-width: 800px;
     margin-left: 0;
-	 margin-bottom: 0;
+     margin-bottom: 0;
 }
 
 .hero-form input {
@@ -253,7 +253,7 @@ body {
     min-height: 70vh;
     margin-bottom: -60px;
     overflow: hidden;
-	    margin-top: 0;
+        margin-top: 0;
 }
 
 .second-section .content {
@@ -350,7 +350,7 @@ body {
 
 /* Quarta Seção */
 .fourth-section {
-    background: url('C:/LP - CLIENTE BILINKI/img/matrix2.gif') no-repeat center center / cover;
+    background: url('https://github.com/tuco-gui/LP---CLIENTE-BILINKI/raw/main/img/matrix2.gif') no-repeat center center / cover;
     position: relative;
     padding: 100px 20px;
     text-align: center;
@@ -391,7 +391,7 @@ body {
 }
 
 .card {
-    background: url('C:/LP - CLIENTE BILINKI/img/matrix3.jpg') no-repeat center center / cover;
+    background: url('https://github.com/tuco-gui/LP---CLIENTE-BILINKI/raw/main/img/matrix3.jpg') no-repeat center center / cover;
     border-radius: 20px;
     text-align: center;
     padding: 60px 30px;
@@ -478,7 +478,7 @@ body {
 
 /* Correção para a barra final */
 .final-bar {
-    background: url('C:/LP - CLIENTE BILINKI/img/banner.jpg') no-repeat center center / cover;
+    background: url('https://github.com/tuco-gui/LP---CLIENTE-BILINKI/raw/main/img/banner.jpg') no-repeat center center / cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -600,9 +600,10 @@ body {
 .fifth-content .cta-button:hover {
     background: linear-gradient(to right, #ff00ff, #ff007f);
 }
+
 /* Sexta seção */
 .sixth-section {
-    background: url('C:/LP - CLIENTE BILINKI/img/matrix2.gif') no-repeat center center;
+    background: url('https://github.com/tuco-gui/LP---CLIENTE-BILINKI/raw/main/img/matrix2.gif') no-repeat center center;
     background-size: 100%; /* Sem zoom */
     position: relative;
     padding: 80px 20px;
@@ -673,14 +674,14 @@ body {
     width: 100%;
     text-align: left;
     padding: 15px 20px;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 /* Toggle (+ ou -) */
 .faq-toggle {
     width: 40px;
     height: 40px;
-	min-width: 30px; /* Garante que o botão não encolha */
+    min-width: 30px; /* Garante que o botão não encolha */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -688,55 +689,4 @@ body {
     font-size: 1.5rem;
     color: #fff;
     background: linear-gradient(to bottom right, 
-        rgb(244,5,134),
-        rgb(206,24,152),
-        rgb(170,41,169),
-        rgb(137,58,187),
-        rgb(74,82,207),
-        rgb(11,118,250)
-    );
-    transition: transform 0.3s ease;
-    margin-left: 10px; /* Garante espaço entre o botão e o texto */
-}
-
-/* Resposta oculta */
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out,opacity 0.3s ease-out,padding 0.3s ease-out;
-    padding:0 20px;
-	opacity:0;
-	background:rgba(0,0,0,4)
-}
-
-.faq-item.open .faq-answer {
-    max-height: 1000px;
-    padding: 15px 20px;
-    opacity: 1;
-}
-
-.faq-item.open .faq-toggle {
-    transform: rotate(45deg); /* Muda de + para - */
-}
-
-/* Botão final (Garanta sua vaga agora) */
-.cta-button {
-    background: linear-gradient(to right, #ff0080, #8000ff);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 50px; /* Desloca o botão para 1,5 linha abaixo */
-    text-transform: uppercase;
-    display: inline-block;
-    text-align: center;
-    z-index: 2;
-    position: relative;
-}
-
-.cta-button:hover {
-    background: linear-gradient(to right, #8000ff, #ff0080);
-}
+        rgb(244,5
