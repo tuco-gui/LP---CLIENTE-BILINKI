@@ -1,3 +1,7 @@
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 /* Reset básico */
 * {
     margin: 0;
@@ -5,14 +9,18 @@
     box-sizing: border-box;
 }
 
+/* Estilos globais */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: #000;
     color: #fff;
-    overflow-x: hidden; /* Remove qualquer barra de rolagem horizontal indesejada */
+    overflow-x: hidden;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+/* Aplicando Audiowide em títulos */
+h1, .audiowide-text {
+    font-family: 'Audiowide', sans-serif;
+}
 
 /* Faixa superior animada */
 .top-bar {
@@ -48,15 +56,15 @@ body {
 }
 
 .slide-content {
-    flex: 0 0 auto;
-    padding: 10px 30px 10px 0;
-    white-space: nowrap;
-    font-family: 'Audiowide', cursive;
+    display: flex;
+    gap: 4ch; /* Espaço natural entre as frases */
+    align-items: center;
+    padding: 10px 0;
 }
 
 .slide-item {
     flex: 0 0 auto;
-    padding-right: 30px;
+    padding-right: 30px; /* Espaço adicional entre frases */
     white-space: nowrap;
 }
 
@@ -101,48 +109,1046 @@ body {
     background-color: #e600e6;
 }
 
-/* Seção principal */
+/* Responsividade */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .slide-content {
+        flex-wrap: wrap;
+        gap: 2ch; /* Reduz o espaçamento entre frases */
+        font-size: 0.8rem; /* Ajusta o tamanho da fonte */
+    }
+
+    .top-bar-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-content {
+        gap: 1ch; /* Espaço menor entre frases */
+        font-size: 0.7rem; /* Fonte ainda menor para caber na tela */
+    }
+
+    .top-bar-button {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+}
+
+/* Hero Section */
 .hero {
     background: url('../img/matrix.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px 20px;
-    min-height: 70vh; /* Mantém a altura mínima */
-    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    padding: 20px;
+    min-height: 70vh; /* Ajustar para limitar a altura */
+    height: auto;
     position: relative;
     overflow: hidden;
 }
+/* Seta Animada */
+.arrow-gif {
+    position: absolute;
+    right: 20px; /* Ajuste conforme necessário */
+    bottom: 20px; /* Ajuste conforme necessário */
+    width: 50px; /* Ajuste o tamanho da seta */
+    animation: bounce 1.5s infinite;
+}
 
-/* Demais seletores permanecem os mesmos */
+.arrow-gif img {
+    width: 100%; /* Faz a imagem ocupar todo o espaço do contêiner */
+    height: auto;
+}
 
-/* Correção para os caminhos das imagens */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.hero-left {
+    flex: 1;
+    color: #fff;
+    max-width: 600px;
+}
 
+.hero-logo {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.hero-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-form input {
+    flex: 1 1 calc(33.333% - 10px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.hero-form input::placeholder {
+    color: #ccc;
+}
+
+.hero-form input:focus {
+    border-color: #ff007f;
+}
+
+.hero-form button {
+    flex: 1 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #ff007f, #ff00ff);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-form button:hover {
+    background: linear-gradient(to left, #ff007f, #ff00ff);
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos da Segunda Seção */
+.second-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    background-color: #000;
+    color: #fff;
+    min-height: 70vh;
+    margin-bottom: -60px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.second-section .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px;
+    flex-wrap: nowrap; /* Garante que o conteúdo fique lado a lado no desktop */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.text-container {
+    max-width: 600px;
+    text-align: left; /* Alinhamento no desktop */
+}
+
+.text-container h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-family: 'Audiowide', cursive;
+}
+
+.text-container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.cta-button {
+    background: linear-gradient(to right, #ff007f, #ff00ff);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background: linear-gradient(to right, #ff00ff, #ff007f);
+}
+/* Terceira Seção */
+.third-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 50px;
+    background-color: #000;
+    color: #fff;
+    min-height: 70vh;
+    margin-top: -55px;
+    margin-bottom: -55px;
+    overflow: hidden;
+}
+
+.third-section .text-container {
+    max-width: 500px;
+    text-align: left;
+}
+
+.third-section h2 {
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+}
+
+.third-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.third-section .image-container {
+    max-width: 50%;
+}
+
+.third-section img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Quarta Seção */
 .fourth-section {
-    background: url('img/matrix2.gif') no-repeat center center / cover;
+    background: url('../img/matrix2.gif') no-repeat center center / cover;
     position: relative;
-    padding: 100px 20px;
+    padding: 80px 20px;
     text-align: center;
     color: #fff;
     overflow: hidden;
     z-index: 1;
 }
 
-.card {
-    background: url('img/matrix3.jpg') no-repeat center center / cover;
-    border-radius: 20px;
-    text-align: center;
-    padding: 60px 30px;
-    color: #fff;
-    width: 400px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+.fourth-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Suaviza o fundo */
+    backdrop-filter: blur(6px);
+    z-index: -1;
 }
 
-.sixth-section {
-    background: url('img/matrix2.gif') no-repeat center center;
+/* Título da seção */
+.fourth-section {
+    background: url('../img/matrix2.gif') no-repeat center center / cover;
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.fourth-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
+
+.fourth-section h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 58px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 40px; /* Espaçamento ajustado */
+    word-break: break-word;
+    display: block;
+}
+
+/* Configuração dos cards */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto; /* Espaço de duas linhas ajustado */
+}
+
+.card {
+    position: relative;
+    background: url('../img/matrix3.jpg') no-repeat center center / cover;
+    border: 2.5px solid rgba(255, 255, 255, 1);
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+    width: 250px;
+    height: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Ajusta opacidade */
+    z-index: 1;
+}
+
+.card * {
+    position: relative;
+    z-index: 2;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 41px;
+    height: 41px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 15px;
+    font-weight: 50;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.card p {
+    font-size: 14px; /* Tamanho do texto no desktop */
+    font-weight: 400; /* Peso da fonte */
+    line-height: 1.5; /* Altura da linha */
+    margin-bottom: 20px; /* Espaço inferior */
+    color: #fff !important; /* Força a aplicação da cor */
+}
+
+.card button {
+    background: linear-gradient(to right, #ff007f, #ff00ff);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.card button:hover {
+    background: linear-gradient(to right, #ff00ff, #ff007f);
+}
+
+/* Diferenciais */
+.differentials {
+    text-align: center;
+    max-width: 1000px;
+    margin: 50px auto;
+    color: #fff;
+	margin-bottom: 0; /* Reduz o espaço para no máximo 3 linhas */
+}
+
+.differentials h3 {
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.differentials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center; /* Centralizado na versão desktop */
+    max-width: 1000px;
+}
+
+.differentials li {
+    font-size: 1rem;
+    margin-bottom: 20px; /* Espaçamento maior entre os itens */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    position: relative;
+    display: block; /* Corrige sobreposição */
+    text-align: center;
+}
+.differentials li::before {
+    content: "▷";
+    position: relative;
+    left: -25px;
+    color: #ff007f;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+    }
+	
+	    .card button {
+        font-size: 1rem; /* Reduz tamanho da fonte */
+        padding: 5px 20px; /* Reduz tamanho do botão */
+        bottom: 15px; /* Ajusta posição */
+    }
+
+    .card p {
+        font-size: 13px; /* Reduz tamanho do texto */
+    }
+
+    .differentials ul {
+        text-align: left;
+        padding: 0 20px;
+    }
+	
+	.differentials {
+        margin-bottom: -10px; /* Ajuste equivalente para responsivo */
+    }
+
+    .fourth-section h2 {
+        font-size: 36px;
+    }
+}
+/* Barra Final */
+/* Configuração para Desktop */
+.final-bar {
+    background: url('C:/LP - CLIENTE BILINKI/img/banner.jpg') no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 27px 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    width: 100vw;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    left: 0;
+    right: 0;
+	margin-top: -10px; /* Remove espaçamento adicional da barra final */
+}
+
+.final-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.final-bar-item {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.final-bar-item h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 58px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.final-bar-item p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.3;
+    color: #fff;
+}
+
+/* Suavização das cores da barra */
+.final-bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .final-bar {
+        background: url('C:/lp_rafael_levi/img/barraresponviva.jpg') no-repeat center center / cover;
+		margin-top: -20px;
+
+    }
+
+    .final-bar-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .final-bar-item[data-order-mobile="1"] {
+        order: 1;
+    }
+
+    .final-bar-item[data-order-mobile="2"] {
+        order: 2;
+    }
+
+    .final-bar-item[data-order-mobile="3"] {
+        order: 3;
+    }
+
+    .final-bar-item h3 {
+        font-size: 50px; /* Ajuste o tamanho para responsivo */
+    }
+
+    .final-bar-item p {
+        font-size: 18px; /* Ajuste para responsivo */
+    }
+}
+/* Quinta Seção: Sobre Rafael Levi */
+.fifth-section {
+    background-color: #000;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+    margin-top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fifth-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.fifth-image {
+    flex: 1;
+    text-align: center;
+}
+
+.fifth-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.fifth-content {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+}
+
+.fifth-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.fifth-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.fifth-content .cta-button {
+    background: linear-gradient(to right, #ff007f, #ff00ff);
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+    display: inline-block;
+}
+
+.fifth-content .cta-button:hover {
+    background: linear-gradient(to right, #ff00ff, #ff007f);
+}
+/* Responsividade da Quinta Seção */
+@media screen and (max-width: 768px) {
+    .fifth-container {
+        flex-direction: column;
+
+    }
+
+    .fifth-content h2 {
+        order: 1; /* Título vem primeiro */
+        font-size: 58px !important; /* Tamanho exato */
+        font-family: 'Lato', sans-serif !important; /* Fonte correta */
+        font-weight: 700 !important; /* Peso exato */
+        color: #FFFFFF !important; /* Cor exata */
+        margin-bottom: 15px !important;
+    }
+
+    .fifth-image {
+        order: 2; /* Imagem vem depois do título */
+        margin-bottom: 20px;
+        width: 90%;
+    }
+
+    .fifth-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .fifth-content {
+        order: 3; /* Texto vem após a imagem */
+        max-width: 90%;
+        padding: 0 20px;
+    }
+
+    .fifth-content .cta-button {
+        order: 4; /* Botão centralizado por último */
+        margin-top: 20px;
+        padding: 12px 25px;
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+    }
+}
+/* Sexta seção */
+.sixth-section {'../img/matrix2.gif') no-repeat center center;
     background-size: 100%; /* Sem zoom */
     position: relative;
     padding: 80px 20px;
     text-align: center;
     color: #fff;
+}
+
+.sixth-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fundo mais opaco */
+    backdrop-filter: blur(6px); /* Suaviza a imagem */
+    z-index: 1;
+}
+
+.sixth-section h2 {
+    font-size: 2.9rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    position: relative;
+}
+
+/* Caixa de perguntas */
+.faq-container {
+    max-width: 640px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, 
+        rgb(244,5,134),
+        rgb(206,24,152),
+        rgb(170,41,169),
+        rgb(137,58,187),
+        rgb(74,82,207),
+        rgb(11,118,250)
+    );
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    position: relative;
+}
+
+/* Cada pergunta */
+.faq-item {
+    margin-bottom: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    color: #dfdfdf;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Botão de perguntas */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+	cursor: pointer;
+}
+
+/* Toggle (+ ou -) */
+.faq-toggle {
+    width: 40px;
+    height: 40px;
+	min-width: 30px; /* Garante que o botão não encolha */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    background: linear-gradient(to bottom right, 
+        rgb(244,5,134),
+        rgb(206,24,152),
+        rgb(170,41,169),
+        rgb(137,58,187),
+        rgb(74,82,207),
+        rgb(11,118,250)
+    );
+    transition: transform 0.3s ease;
+    margin-left: 10px; /* Garante espaço entre o botão e o texto */
+}
+
+/* Resposta oculta */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out,opacity 0.3s ease-out,padding 0.3s ease-out;
+    padding:0 20px;
+	opacity:0;
+	background:rgba(0,0,0,4)
+}
+
+.faq-item.open .faq-answer {
+    max-height: 1000px;
+    padding: 15px 20px;
+    opacity: 1;
+}
+
+.faq-item.open .faq-toggle {
+    transform: rotate(45deg); /* Muda de + para - */
+}
+
+/* Botão final (Garanta sua vaga agora) */
+.cta-button {
+    background: linear-gradient(to right, #ff0080, #8000ff);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 50px; /* Desloca o botão para 1,5 linha abaixo */
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.cta-button:hover {
+    background: linear-gradient(to right, #8000ff, #ff0080);
+}
+/* Sétima Seção: Rodapé */
+.footer-section {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row; /* Coloca lado a lado */
+}
+
+.footer-content p {
+    color: #000;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-content img {
+    max-width: 120px; /* Tamanho ideal para o logo */
+    height: auto;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: row; /* Mantém lado a lado mesmo em telas menores */
+    }
+
+    .footer-content p {
+        font-size: 0.9rem; /* Ajuste menor para dispositivos menores */
+    }
+
+    .footer-content img {
+        max-width: 100px; /* Ajuste menor para dispositivos menores */
+    }
+}
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-position: center;
+    }
+
+    .hero-left {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-form input {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .hero-form button {
+        width: 90%;
+    }
+
+    .hero-image {
+        width: 70%;
+        margin-top: 20px;
+    }
+
+    .arrow-gif {
+        width: 30px;
+        bottom: 10px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero-form input,
+    .hero-form button {
+        width: 100%;
+    }
+
+    .hero-image {
+        width: 80%;
+    }
+
+    .arrow-gif {
+        width: 25px;
+    }
+}
+@media (max-width: 768px) {
+    .second-section {
+        flex-direction: column;
+        padding: 20px;
+        min-height: auto; /* Ajusta altura mínima */
+    }
+
+    .second-section .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Espaçamento entre imagem e texto */
+    }
+
+    .text-container {
+        text-align: center; /* Centraliza o texto no mobile */
+    }
+
+    .text-container h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .second-section .content {
+        gap: 20px; /* Reduz o espaçamento no mobile menor */
+    }
+
+    .text-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-container p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+}
+@media (max-width: 768px) {
+    .third-section {
+        display: flex;
+        flex-direction: column; /* Altera a direção para vertical */
+        align-items: center;
+        text-align: center; /* Centraliza o conteúdo */
+        gap: 20px; /* Espaçamento entre os elementos */
+        margin-top: 30px; /* Adiciona espaçamento superior */
+        padding-top: 40px; /* Garante espaço extra */
+        padding: 20px 20px; /* Ajusta o padding lateral */
+    }
+
+    .third-section .text-container {
+        order: 2; /* Garante que o texto fique no topo */
+        margin-bottom: 20px; /* Espaçamento inferior */
+    }
+
+    .third-section .image-container {
+        order: 1; /* Garante que a imagem fique abaixo do texto */
+        max-width: 90%; /* Ajusta o tamanho da imagem no mobile */
+        margin-bottom: 20px; /* Espaçamento inferior */
+		margin-top: 30px; /* Adiciona espaçamento superior */
+
+    }
+
+    .third-section .cta-button {
+        order: 3; /* Garante que o botão fique abaixo da imagem */
+        display: block; /* Garante que o botão ocupe toda a linha */
+        margin: 0 auto; /* Centraliza o botão */
+        width: auto; /* Ajusta a largura do botão */
+		margin-bottom: 40px; /* Espaçamento inferior */
+
+    }
+}
+@media (max-width: 1024px) {
+    /* Ajusta o tamanho e espaçamento dos cards para tablets */
+    .cards-container {
+        gap: 15px; /* Reduz o espaçamento entre os cards */
+        padding: 0 10px;
+    }
+
+    .card {
+        width: 200px; /* Reduz a largura dos cards */
+        height: auto; /* Permite que a altura se ajuste automaticamente */
+        padding: 30px 15px; /* Ajusta o padding */
+    }
+
+    .card h3 {
+        font-size: 18px; /* Reduz o tamanho do título dos cards */
+        margin-bottom: 20px;
+    }
+
+    .card p {
+        font-size: 14px; /* Reduz o tamanho do texto dentro dos cards */
+        margin-bottom: 20px;
+    }
+
+    .card button {
+        padding: 10px 20px; /* Ajusta o tamanho do botão */
+        font-size: 14px; /* Reduz o tamanho do texto do botão */
+    }
 }
